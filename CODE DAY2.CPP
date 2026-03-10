@@ -93,5 +93,35 @@ public:
     }
 };
 
-
-git add .
+// 1768. Merge Strings Alternately (1 . Approach 1: Two Pointer Approach)
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        int i=0;
+        int j=0;
+        bool t= false;
+        string ans="";
+        while(i<word1.length()&&j<word2.length()){
+if(t==false){
+    ans+=word1[i];
+t=true;
+i++;
+}
+if(t==true){
+    ans+=word2[j];
+t=false;
+j++;
+}
+        }
+while(j<word2.length()){
+ans+=word2[j];
+j++;
+}
+while(i<word1.length()){
+ans+=word1[i];
+i++;
+}
+        
+        return ans;
+    }
+};
